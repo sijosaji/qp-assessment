@@ -71,7 +71,7 @@
          "limit": 10
      }
     ```
-2. **POST /user/grocery-item/{userId}/book-items**: Endpoint to book grocery items with required quantity and returns booking itemId with Item details and total amount incurred.
+2. **POST /user/{userId}/grocery-item/book-items**: Endpoint to book grocery items with required quantity and returns booking itemId with Item details and total amount incurred.
 
     ```json
     [
