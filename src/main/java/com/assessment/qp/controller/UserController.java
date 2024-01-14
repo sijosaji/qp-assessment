@@ -16,13 +16,13 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("user/grocery-item")
+@RequestMapping("user")
 
 public class UserController {
     @Autowired
     private UserItemService userItemService;
 
-    @PostMapping("search")
+    @PostMapping("grocery-item/search")
     /**
      * Resource method to search Items based on filters provided.
      * @param dto Dto that contains filters and pagination params to search and list data.
@@ -32,7 +32,7 @@ public class UserController {
         return userItemService.searchItems(dto);
     }
 
-    @PostMapping("{userId}/book-items")
+    @PostMapping("{userId}/grocery-item/book-items")
     /**
      * Resource method to book grocery items selected by the user.
      * @param bookingRequestDto Request to book Grocery items.
