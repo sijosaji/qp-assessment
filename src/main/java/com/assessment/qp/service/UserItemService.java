@@ -48,6 +48,8 @@ public class UserItemService {
         if (!unsupportedFields.isEmpty()) {
             return ResponseEntity.status(400).body("Following are unsupported fields im filter "+ unsupportedFields);
         }
+        // Add condition to view only all those items which are available.
+        dto.getSearchCriteriaList().add(new SearchCriteria("quantity", 0, "gt", "AND"));
         specificationHelper.setFilters(dto.getSearchCriteriaList());
         Specification<Item> itemSpecification = specificationHelper.buildSpecification();
         Pageable pageable = PageRequest.of(dto.getOffset(), dto.getLimit());
