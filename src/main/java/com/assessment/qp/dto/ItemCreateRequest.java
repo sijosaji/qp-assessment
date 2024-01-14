@@ -10,15 +10,15 @@ import java.time.LocalDate;
 
 @Data
 public class ItemCreateRequest {
-    @NotEmpty
+    @NotEmpty(message = "Name can't be empty")
     private String name;
     private String description;
-    @Min(1)
+    @Min(value = 1, message = "Min Quantity is 1")
     private Integer quantity;
-    @NotNull
+    @NotNull(message = "Cost Price needs to be provided")
     private BigDecimal costPrice;
-    @NotNull
+    @NotNull(message = "Expiration Date needs to be provided")
     private LocalDate expirationDate;
-    @NotNull
+    @NotNull(message = "Selling Price needs to be provided")
     private BigDecimal sellingPrice;
 }
